@@ -142,7 +142,7 @@ final class FileResourceLoader implements ResourceLoader {
         manifest = readManifestFile(manifestFile);
         final URL rootUrl;
         try {
-            rootUrl = new URI("file", null, root.getAbsolutePath(), null).toURL();
+            rootUrl = new URI("file", null, "///" + root.getAbsolutePath(), null).toURL();
         } catch (MalformedURLException e) {
             throw new IllegalArgumentException("Invalid root file specified", e);
         } catch (URISyntaxException e) {
